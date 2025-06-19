@@ -16,7 +16,7 @@ const AnimeLayouts = ({ text, children }: AnimeLayoutsProps) => {
       <section className="flex w-full flex-col items-center pt-40 pb-20">
         <LoaderAnimePopular />
         <h2
-          className={`${isLoading && "hidden"} bg-primary mb-15 ml-2 self-start rounded-2xl px-4 py-3 text-2xl font-semibold text-white sm:mb-20 sm:ml-16`}
+          className={`${isLoading && "hidden"} bg-primary mx-2 mb-15 self-start rounded-2xl px-4 py-3 text-2xl font-semibold text-white sm:mb-20 sm:ml-16`}
         >
           {text}
         </h2>

@@ -1,16 +1,16 @@
-import { useParams } from "react-router";
-import AnimeLayouts from "../components/Layouts/AnimeLayouts";
-import useFetchAllAnimeGenres from "../hooks/useFetchAllAnimeGenres";
 import CardAnime from "../components/CardAnime/CardAnime";
+import AnimeLayouts from "../components/Layouts/AnimeLayouts";
 import PaginationAnime from "../components/Pagination/PaginationAnime";
+import useAnime from "../hooks/useAnime";
 import type { DataSortAnime } from "../interfaces/DataSortAnime";
+import { animeUpcoming } from "../services/apiAnimeUpcoming";
 
-const DetailAnimeGenres = () => {
-  const { page, setPage, isLoading, dataAnime, dataPagination } =
-    useFetchAllAnimeGenres();
-  const { name } = useParams();
+const AnimeUpcomingPage = () => {
+  const { isLoading, dataAnime, dataPagination, page, setPage } = useAnime({
+    api: animeUpcoming,
+  });
   return (
-    <AnimeLayouts text={`Anime Genre #${name}`}>
+    <AnimeLayouts text={`Anime Upcoming #${page}`}>
       <div
         className={`${isLoading && "hidden"} mb-5 grid w-11/12 grid-cols-2 place-content-center gap-x-4 gap-y-4 sm:grid-cols-[repeat(auto-fit,minmax(10rem,10rem))] sm:gap-x-8`}
       >
@@ -20,12 +20,12 @@ const DetailAnimeGenres = () => {
       </div>
 
       <PaginationAnime
-        dataPagination={dataPagination}
         page={page}
         setPage={setPage}
+        dataPagination={dataPagination}
       />
     </AnimeLayouts>
   );
 };
 
-export default DetailAnimeGenres;
+export default AnimeUpcomingPage;

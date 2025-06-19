@@ -1,13 +1,13 @@
 import axios from "axios";
 
-export const animePopular = async (page: number) => {
+export const animeSchedule = async (day: string) => {
   try {
     const response = await axios.get(
-      `https://api.jikan.moe/v4/top/anime?limit=24&page=${page}`,
+      `https://api.jikan.moe/v4/schedules?filter=${day}`,
     );
     return response.data;
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return null;
   }
 };

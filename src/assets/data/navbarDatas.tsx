@@ -1,10 +1,11 @@
 import {
   BookmarkIcon,
+  CalendarDotsIcon,
   CalendarIcon,
   CheckCircleIcon,
   ClockIcon,
+  FilmReelIcon,
   HeartIcon,
-  QueueIcon,
   TagIcon,
 } from "@phosphor-icons/react";
 import type { ReactNode } from "react";
@@ -30,34 +31,41 @@ const navbarDatas: NavbarDatas[] = [
     id: 2,
   },
   {
-    text: "Jadwal tayang",
-    link: "/animeJadwal",
-    icon: <CalendarIcon size={25} />,
-    id: 3,
-  },
-  {
-    text: "Daftar Anime",
-    link: "/animeList",
-    icon: <QueueIcon size={25} />,
-    id: 4,
-  },
-  {
     text: "Anime Tamat",
     link: "/animeEnd",
     icon: <CheckCircleIcon size={25} />,
+    id: 3,
+  },
+  {
+    text: "Anime Movie",
+    link: "/animeMovie",
+    icon: <FilmReelIcon size={25} />,
+    id: 4,
+  },
+  {
+    text: "Anime Mendatang",
+    link: "/animeUpcoming",
+    icon: <CalendarDotsIcon size={25} />,
     id: 5,
   },
+  {
+    text: "Jadwal tayang",
+    link: "/animeJadwal",
+    icon: <CalendarIcon size={25} />,
+    id: 6,
+  },
+
   {
     text: "Daftar Genre",
     link: "/animeGenres",
     icon: <TagIcon size={25} />,
-    id: 6,
+    id: 7,
   },
   {
     text: "Bookmark",
     link: "/animeBookmark",
     icon: <BookmarkIcon size={25} />,
-    id: 7,
+    id: 8,
   },
 ];
 
